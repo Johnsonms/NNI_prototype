@@ -41,3 +41,5 @@ def _get_experiment_ports():
         return None
     experiments = json.load(open(experiment_list_path))
     return [exp['port'] for exp in experiments.values() if exp['status'] != 'STOPPED']
+
+print(_get_experiment_ports())
