@@ -176,7 +176,7 @@ def symlink_nni_node():
     _symlink('ts/nasui/build', 'nni_node/nasui/build')
     _symlink('ts/nasui/server.js', 'nni_node/nasui/server.js')
 
-    _symlink('ts/jupyter_extension/dist', 'nni_node/jupyter-extension')
+    _symlink('ts/jupyter_extension/build', 'nni_node/jupyter-extension')
 
 
 def copy_nni_node(version):
@@ -211,7 +211,7 @@ def copy_nni_node(version):
     shutil.copytree('ts/nasui/build', 'nni_node/nasui/build')
     shutil.copyfile('ts/nasui/server.js', 'nni_node/nasui/server.js')
 
-    shutil.copytree('ts/jupyter_extension/dist', 'nni_node/jupyter-extension')
+    shutil.copytree('ts/jupyter_extension/build', 'nni_node/jupyter-extension')
 
 
 _yarn_env = dict(os.environ)
