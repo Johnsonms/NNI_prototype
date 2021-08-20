@@ -155,7 +155,7 @@ def compile_ts():
 
     _print('Building JupyterLab extension')
     _yarn('ts/jupyter_extension')
-    _yarn('ts/jupyter_extension', 'build')
+    _yarn('ts/jupyter_extension', 'build2.x')
 
 
 def symlink_nni_node():
@@ -177,7 +177,7 @@ def symlink_nni_node():
     _symlink('ts/nasui/server.js', 'nni_node/nasui/server.js')
 
     _symlink('ts/jupyter_extension/build', 'nni_node/jupyter-extension')
-
+    _symlink(sys.exec_prefix+'/share/jupyter/lab/extensions', 'nni_node/jupyter-extension/extensions')
 
 def copy_nni_node(version):
     """
@@ -211,8 +211,8 @@ def copy_nni_node(version):
     shutil.copytree('ts/nasui/build', 'nni_node/nasui/build')
     shutil.copyfile('ts/nasui/server.js', 'nni_node/nasui/server.js')
 
-    shutil.copytree('ts/jupyter_extension/build', 'nni_node/jupyter-extension')
-
+    shutil.copytree('ts/jupyter_extension/build', 'nni_node/jupyter-extension/build')
+    shutil.copytree(sys.exec_prefix+'/share/jupyter/lab/extensions', 'nni_node/jupyter-extension/extensions')
 
 _yarn_env = dict(os.environ)
 # `Path('nni_node').resolve()` does not work on Windows if the directory not exists

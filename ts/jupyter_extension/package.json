@@ -3,7 +3,7 @@
     "version": "999.0.0-developing",
     "license": "MIT",
     "scripts": {
-        "build": "tsc && jupyter labextension link ."
+        "build2.x": "tsc && jupyter labextension link ."
     },
     "dependencies": {
         "@jupyterlab/application": "^2.3.0",
@@ -14,7 +14,7 @@
     },
     "jupyterlab": {
         "extension": true,
-        "outputDir": "dist"
+        "outputDir": "build"
     },
     "main": "build/index.js"
 }
